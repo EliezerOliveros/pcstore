@@ -1,27 +1,26 @@
 import Navbar from './components/NavBar/Navbar'
 import Title from './components/Title'
-import ItenListContainer from "./components/ItenlistContainer/ItenListContainer" 
-import './App.css'
+import ItemListContainerWithHoc from "./components/ItenlistContainer/ItemListContainer"
 import Banner from './components/Banner'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Footer from './components/footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './App.css'
 function App() {
-
-  const stylesh1 = {
-    color: "lime",
-    fontSize: "10px"
-  }
-
 
   return (
     <>
-      <div>
-        <Navbar/>
-        <ItenListContainer/>
-      </div>
-      <div>
-        <Title />
-        <Banner />
-        <ItenListContainer greeting={"Bienvenido a tu tienda faborita"}/>
+      <div className="app-container">
+        <BrowserRouter>
+          <Navbar/>
+          <Banner />
+          <Routes>
+
+           <Route path="/" />
+           <Route path="/Products" element={ <ItemListContainerWithHoc /> } />
+          
+          </Routes>
+        </BrowserRouter>
       </div>
     </>
   )
