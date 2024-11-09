@@ -1,0 +1,59 @@
+.itemcount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  
+    button {
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+  
+      &:hover {
+        background-color: white;
+        color: black;
+        border-color: black;
+      }
+  
+      &:focus {
+        outline: none;
+      }
+  
+      &.increment-decrement {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        padding: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        font-weight: normal;
+      }
+  
+      &.add-product {
+        background-color: green;
+        border: 2px solid green;
+  
+        &:hover {
+          background-color: white;
+          color: green;
+          border-color: green;
+        }
+      }
+    }
+  
+    p {
+      font-size: 20px;
+      margin: 10px 0;
+      color: white;
+    }
+  }
+  

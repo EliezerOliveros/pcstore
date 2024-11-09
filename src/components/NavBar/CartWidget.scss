@@ -1,0 +1,30 @@
+.cartwidget {
+    position: relative;  
+    display: inline-block;  
+  
+    .icon-cartwidget {
+      color: #000;  
+      transition: color 0.3s ease; 
+    }
+  
+    .number-cartwidget {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #ff0000;  
+      color: white;  
+      font-size: 12px;
+      font-weight: bold;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;  
+      padding: 2px;  
+    }
+  
+    &:hover .icon-cartwidget {
+      color: #00ff40; 
+  }
+}

@@ -1,8 +1,108 @@
-.cartwidget {
-    display: flex;
-   
-}
+$navbar-bg: #c90064;
+$nav-link-color: #000000;
+$nav-link-hover-color: #00ff40;
+$font-size: 0.875rem;
+$link-margin: 1rem;
+$navbar-padding: 0.25rem 0.5rem;
+$logo-size: 90px;  // Hacer el logo más pequeño
 
-.navbar{
-    background-color: rgb(201, 48, 155);
+.navbar {
+  background-color: $navbar-bg;
+  padding: $navbar-padding;
+
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+
+    .nav-link {
+      color: $nav-link-color;
+      font-size: $font-size;
+      font-weight: bold;
+      transition: color 0.3s;
+      margin-right: $link-margin;
+      padding: 0.25rem 0.5rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        color: $nav-link-hover-color;
+      }
+    }
+  }
+
+  .Brand {
+    flex-grow: 1;
+    text-align: center;  // Centrar el logo
+    img {
+      width: $logo-size;  // Ajustar el tamaño del logo
+      height: auto;
+      border: none;
+    }
+  }
+
+  .navbar-text {
+    color: $nav-link-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .cart-widget {
+      width: 24px;
+      height: auto;
+      position: relative;
+
+      /* Indicador de cantidad en el carrito */
+      .cart-count {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: #00ff40;
+        color: #ffffff;
+        border-radius: 50%;
+        padding: 5px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border-color: $nav-link-color;
+    padding: 0.25rem 0.5rem;
+
+    .navbar-toggler-icon {
+      background-color: $nav-link-color;
+      width: 20px;
+      height: 2px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .navbar-left {
+      display: none;
+    }
+
+    .navbar-collapse {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .navbar-nav {
+      text-align: right;
+
+      .nav-item {
+        padding: 8px 0;
+        width: 100%;
+      }
+    }
+  }
 }

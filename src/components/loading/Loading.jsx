@@ -1,12 +1,12 @@
-import { PacmanLoader } from "react-spinners"
-import "./loading.scss"
+import { PacmanLoader } from "react-spinners";
+import "./loading.scss";
 
-const loading = () => {
+const Loading = () => {
   return (
     <div className="loading-screen">
       <PacmanLoader size={75} color={"purple"} />
     </div>
-  )
-}
+  );
+};
 
-export default loading
+export default Loading;

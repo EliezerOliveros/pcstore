@@ -1,0 +1,128 @@
+$primary-bg: #1c1c1c;  
+$secondary-bg: #333333; 
+$primary-color: #00ff00; 
+$secondary-color: #ff0000; 
+$button-bg: #111111; 
+$button-hover-bg: #00ff00; 
+$button-border: #444444; 
+
+.checkout {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  background-color: $primary-bg;
+  padding: 20px;
+}
+
+.content-input {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-bg;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.content-input input {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #444444;
+  background-color: #222222;
+  color: #ffffff;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $primary-color;
+    background-color: #333333;
+    outline: none;
+  }
+}
+
+.button-send-order, .button-to-home {
+  margin: 20px 0;
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $button-bg;
+  border: 2px solid $button-border;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-bg;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.button-to-home {
+  background-color: #222222;
+  color: #888888;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+h2 {
+  color: $primary-color;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.7);
+}
+
+p {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.form-checkout {
+  width: 100%;
+  max-width: 600px;
+  background-color: $secondary-bg;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.label {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .checkout {
+    padding: 15px;
+  }
+
+  .form-checkout {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .content-input input {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .button-send-order, .button-to-home {
+    width: 100%;
+    font-size: 18px;
+  }
+}

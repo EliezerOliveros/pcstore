@@ -1,24 +1,29 @@
+import { useParams } from "react-router-dom";
+import ItemList from "./ItemList";
+import { useProducts } from "../../hooks/useProducts";
+import hocFilterProducts from "../../hoc/hocFilterProducts";
+import "./itemlistcontainer.scss";
 
-import ItemList from "./ItemList.jsx"
-import useProducts from "../../hooks/UseProducts.jsx"
-import Loading from "../loading/loading.jsx"
-import "./ItemListContainer.scss"
-import hocFilterProducts from "../../hoc/hocFilterProducts.jsx"
-import loading from "../loading/loading.jsx"
+const ItemListContainer = ({ greeting }) => {
+  const { idCategory } = useParams();
+  const { products, loading, error } = useProducts(idCategory);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-const ItemListContainer = ({ products }) => {
-  
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  const ItemListWithFilters = hocFilterProducts(ItemList);
+
   return (
-
-    <div className="itemlistcontainer">    
-      <ItemList products={products}/>
+    <div className="itemlistcontainer">
+      <h1>{greeting}</h1>
+      <ItemListWithFilters products={products} />
     </div>
- 
-  )
-}
+  );
+};
 
-  const ItemListContainerWithHoc = hocFilterProducts( ItemListContainer )
-
-export default ItemListContainerWithHoc
-    
+export default ItemListContainer;

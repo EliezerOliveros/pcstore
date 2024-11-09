@@ -1,21 +1,41 @@
-import { useState, useEffect } from "react"
-import { getProducts } from "../data/data.js"
+import { useState, useEffect } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import db from "../db/db";
 
+export const useProducts = (idCategory) => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-const useProducts = () => {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    setLoading(true);
 
-    useEffect(()=>{
-        setLoading(true)
+    const collectionRef = collection(db, "products");
 
-        getProducts()
-            .then((data) => setProducts(data) )
-            .finally( ()=> setLoading(false))
-    }, [])
-    
-    return { products, loading }
+    const getData = async () => {
+      try {
+        let q = collectionRef;
+        if (idCategory) {
+          q = query(collectionRef, where("category", "==", idCategory));
+        }
+        const snapshot = await getDocs(q);
+        const productsDb = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProducts(productsDb);
+      } catch (err) {
+        setError("Error al obtener los productos.");
+        console.error("Error fetching products:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-}
+    getData();
+  }, [idCategory]);
 
-export default useProducts
+  return { products, loading, error };
+};
+
+export default useProducts;

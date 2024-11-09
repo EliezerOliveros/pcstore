@@ -1,0 +1,78 @@
+.find-us-container {
+    font-family: 'Arial', sans-serif;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #121212;  
+    color: #e0e0e0;  
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  .find-us-container h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.7);  
+  }
+  
+  
+  .find-us-info {
+    text-align: center;
+    font-size: 18px;
+    color: #d1d1d1;
+  }
+  
+  .find-us-info .address {
+    font-weight: bold;
+    font-size: 20px;
+    color: #00ff00; 
+    margin: 15px 0;
+  }
+  
+  .find-us-info .view-map-button {
+    background-color: #1e88e5;  
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 255, 255, 0.6); 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .find-us-info .view-map-button:hover {
+    background-color: #1565c0;  
+    transform: translateY(-2px);
+  }
+  
+  .find-us-info .view-map-button:active {
+    transform: translateY(0);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .find-us-container {
+      padding: 20px;
+    }
+  
+    .find-us-info {
+      font-size: 16px;
+    }
+  
+    .find-us-info .address {
+      font-size: 18px;
+    }
+  
+    .find-us-info .view-map-button {
+      font-size: 16px;
+      padding: 10px 15px;
+    }
+  }
+  
