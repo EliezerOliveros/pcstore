@@ -9,7 +9,7 @@ import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import FindUs from "./components/findus/Findus";
+import FindUs from "./components/findUs/Findus";
 import "./App.css";
 
 function App() {
